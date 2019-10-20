@@ -1,0 +1,5 @@
+{
+  "hooks": {
+    "pre-commit": "eslint components pages server store utils next.config.js theme.js"
+  }
+}
