@@ -15,8 +15,8 @@ const StyledSwitch = styled.button`
     color: ${({ theme }) => theme.colors.black};
   }
   &[role="switch"][aria-checked="false"] > :last-child,
-  [role="switch"][aria-checked="true"] > :first-child {
-    color: ${({ theme }) => theme.colors.black};
+  &[role="switch"][aria-checked="true"] > :first-child {
+    color: ${({ theme }) => theme.colors.grey};
   }
   span {
     padding: 8px 10px;
