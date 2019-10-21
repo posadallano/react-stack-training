@@ -1,12 +1,12 @@
 import React from 'react';
 import StyledSwitch from '../shared/StyledSwitch';
 
-const ThemeSwitch = () => (
+const ThemeSwitch = ({ isToggleOn, SwitchButton }) => (
   <StyledSwitch
     role="switch"
-    aria-checked="true"
+    onClick={SwitchButton}
+    aria-checked={isToggleOn}
     id="themeswitch"
-    // onClick={onClickSwitchButton}
   >
     <span>ON</span>
     <span>OFF</span>

@@ -5,6 +5,7 @@ import PageWrapper from '@components/PageWrapper';
 import AddTodo from '@components/AddTodo';
 import Todos from '@components/Todos';
 import WelcomeTitle from '@components/WelcomeTitle';
+import ThemeSwitch from '@components/ThemeSwitch';
 
 class Index extends React.Component {
   static async getInitialProps(props) {
@@ -21,6 +22,7 @@ class Index extends React.Component {
     return (
       <PageWrapper>
         <WelcomeTitle />
+        <ThemeSwitch />
         <AddTodo />
         <Todos />
       </PageWrapper>
