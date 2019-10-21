@@ -1,8 +1,8 @@
 import theme from './theme';
 
 const darkTheme = {
-  ...theme.colors,
   colors: {
+    ...theme.colors,
     black: '#fff',
     white: '#000',
     zemoga: '#fff',

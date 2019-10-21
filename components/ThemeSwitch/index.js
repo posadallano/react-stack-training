@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { toggleSwitch } from '@store/actions/todos';
+import { getIsDarkEnabled } from '@store/selectors/themeSwitch';
 import ThemeSwitch from './ThemeSwitch';
-import { getIsDarkEnabled } from '../../store/selectors/themeSwitch';
 
 const mapDispatchToProps = dispatch => ({
   dispatchSwitch: () => dispatch(toggleSwitch),
