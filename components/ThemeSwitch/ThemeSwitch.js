@@ -1,15 +1,15 @@
 import React from 'react';
 import StyledSwitch from '../shared/StyledSwitch';
 
-const ThemeSwitch = ({ isToggleOn, SwitchButton }) => (
+const ThemeSwitch = ({ isDarkThemeEnabled, SwitchButton, toggleSwitch }) => (
   <StyledSwitch
     role="switch"
-    onClick={SwitchButton}
-    aria-checked={isToggleOn}
+    onClick={() => { SwitchButton(); toggleSwitch(); }}
+    aria-checked={isDarkThemeEnabled}
     id="themeswitch"
   >
-    <span>DARK</span>
     <span>LIGHT</span>
+    <span>DARK</span>
   </StyledSwitch>
 );
 
