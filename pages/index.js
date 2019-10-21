@@ -21,8 +21,8 @@ class Index extends React.Component {
   render() {
     return (
       <PageWrapper>
-        <WelcomeTitle />
         <ThemeSwitch />
+        <WelcomeTitle />
         <AddTodo />
         <Todos />
       </PageWrapper>

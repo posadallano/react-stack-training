@@ -8,8 +8,8 @@ const ThemeSwitch = ({ isToggleOn, SwitchButton }) => (
     aria-checked={isToggleOn}
     id="themeswitch"
   >
-    <span>ON</span>
-    <span>OFF</span>
+    <span>DARK</span>
+    <span>LIGHT</span>
   </StyledSwitch>
 );
 
