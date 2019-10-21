@@ -6,7 +6,7 @@ const StyledSpan = styled.span`
     font-size: 15px;
     border: none;
     background: ${({ theme, isActive }) => (isActive ? theme.colors.zemoga : theme.colors.white)};
-    color: ${({ theme, isActive }) => (isActive ? theme.colors.activeswitch : theme.colors.grey)};
+    color: ${({ theme, isActive }) => (isActive ? theme.colors.white : theme.colors.black)};
     &:last-child {
       border-left: 2px solid ${({ theme }) => theme.colors.black};
     }

@@ -3,7 +3,9 @@ import App from 'next/app';
 import { Provider } from 'react-redux';
 import withRedux from 'next-redux-wrapper';
 import withReduxSaga from 'next-redux-saga';
+import { ThemeProvider } from 'styled-components';
 import createStore from '@store';
+import lightTheme from '@theme';
 
 class MyApp extends App {
   static async getInitialProps({ Component, ctx }) {
@@ -20,7 +22,9 @@ class MyApp extends App {
     const { Component, pageProps, store } = this.props;
     return (
       <Provider store={store}>
-        <Component {...pageProps} />
+        <ThemeProvider theme={lightTheme}>
+          <Component {...pageProps} />
+        </ThemeProvider>
       </Provider>
     );
   }

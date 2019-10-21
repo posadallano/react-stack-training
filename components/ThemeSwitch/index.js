@@ -12,9 +12,6 @@ const enhance = compose(
   // initialState
   withStateHandlers({ isDarkThemeEnabled: false }, {
     // stateUpdaters
-    SwitchButton: ({ isDarkThemeEnabled }) => () => ({
-      isDarkThemeEnabled: !isDarkThemeEnabled,
-    }),
     toggleSwitch: ({ isDarkThemeEnabled }, { dispatchToggleSwitch }) => () => {
       dispatchToggleSwitch(isDarkThemeEnabled);
     },

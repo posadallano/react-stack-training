@@ -9,6 +9,7 @@ import ThemeSwitch from '@components/ThemeSwitch';
 import { ThemeProvider } from 'styled-components';
 import lightTheme from '@theme';
 import darkTheme from '../darktheme';
+import { getIsDarkEnabled } from '../store/selectors/themeSwitch';
 
 class Index extends React.Component {
   static async getInitialProps(props) {
@@ -37,7 +38,7 @@ class Index extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  isDarkThemeEnabled: state.isDarkThemeEnabled,
+  isDarkThemeEnabled: getIsDarkEnabled(state),
 });
 
 export default connect(mapStateToProps)(Index);

@@ -2,10 +2,10 @@ import React from 'react';
 import StyledSwitch from '../shared/StyledSwitch';
 import StyledSpan from '../shared/StyledSpan';
 
-const ThemeSwitch = ({ isDarkThemeEnabled, SwitchButton, toggleSwitch }) => (
+const ThemeSwitch = ({ isDarkThemeEnabled, toggleSwitch }) => (
   <StyledSwitch
     role="switch"
-    onClick={() => { SwitchButton(); toggleSwitch(); }}
+    onClick={toggleSwitch}
     aria-checked={isDarkThemeEnabled}
   >
     <StyledSpan isActive={!isDarkThemeEnabled}>LIGHT</StyledSpan>
