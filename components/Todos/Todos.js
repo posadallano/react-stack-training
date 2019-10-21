@@ -4,7 +4,6 @@ import Todo from './Todo';
 
 const Todos = ({ todosIds }) => (
   <StyledUl>
-    {console.log(todosIds)}
     {todosIds.map(todoId => (
       <Todo
         key={todoId}
