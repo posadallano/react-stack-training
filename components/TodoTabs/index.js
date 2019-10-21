@@ -8,20 +8,19 @@ const mapDispatchToProps = dispatch => ({
   dispatchActiveTab: payload => dispatch(toggleTab.request.creator(payload)),
 });
 
-function mapStateToProps(state) {
-  return {
-    currentState: currentTabSelector(state),
-  };
-}
+const mapStateToProps = state => ({
+  currentState: currentTabSelector(state),
+});
+
+const todoTabsHandlers = {
+  toggleActiveTab: ({ dispatchActiveTab }) => (event) => {
+    dispatchActiveTab(event.target.value);
+  },
+};
 
 const enhance = compose(
   connect(mapStateToProps, mapDispatchToProps),
-  withHandlers({
-    toggleActiveTab: ({ dispatchActiveTab }) => (event) => {
-      dispatchActiveTab(event.target.value);
-    },
-  }),
-
+  withHandlers(todoTabsHandlers),
 );
 
 export default enhance(TodoTabs);

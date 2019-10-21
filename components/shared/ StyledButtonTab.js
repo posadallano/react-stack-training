@@ -5,7 +5,7 @@ const StyledButtonTab = styled.button`
   display: inline-block;
   margin: 0 5px;
   border: none;
-  background-color: ${({ theme }) => theme.colors.grey};
+  background-color: ${({ theme, isActive }) => (isActive ? theme.colors.zemoga : theme.colors.grey)};
   font-family: ${({ theme }) => theme.fontFamily};
   color: ${({ theme }) => theme.colors.white};
   font-size: 17px;
@@ -13,9 +13,6 @@ const StyledButtonTab = styled.button`
   outline: none;
   &:first-of-type {
     margin-left: 0;
-  }
-  &.active {
-    background-color: ${({ theme }) => theme.colors.zemoga};
   }
 `;
 
