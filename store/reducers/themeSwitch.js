@@ -1,13 +1,10 @@
-import { toggleSwitch } from '@store/actions/todos';
+import { loadSwitch, toggleSwitch } from '@store/actions/switch';
 
-const switchReducer = isDarkThemeEnabled => !isDarkThemeEnabled;
-
-const initialState = false;
-
-function themeSwitchReducer(state = initialState, action) {
+function themeSwitchReducer(state = false, action) {
   switch (action.type) {
-    case toggleSwitch.type:
-      return switchReducer(state);
+    case loadSwitch.response.type:
+    case toggleSwitch.response.type:
+      return action.payload;
 
     default:
       return state;

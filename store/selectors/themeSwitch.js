@@ -4,7 +4,7 @@ const getCurrentTheme = state => state.isDarkThemeEnabled;
 
 export const getIsDarkEnabled = createSelector(
   [getCurrentTheme],
-  currentTheme => currentTheme,
+  currentTheme => currentTheme.active,
 );
 
 export default getIsDarkEnabled;

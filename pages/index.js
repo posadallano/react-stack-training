@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { loadTodos } from '@store/actions/todos';
+import { loadSwitch } from '@store/actions/switch';
 import { getIsDarkEnabled } from '@store/selectors/themeSwitch';
 import PageWrapper from '@components/PageWrapper';
 import AddTodo from '@components/AddTodo';
@@ -17,6 +18,7 @@ class Index extends React.Component {
 
     if (isServer) {
       await store.dispatch(loadTodos.request.creator());
+      await store.dispatch(loadSwitch.request.creator());
     }
 
     return { isServer };
