@@ -25,10 +25,6 @@ const StyledLi = styled.li`
     top: 34px;
     left: 0;
   }
-  
-  span.text {
-    flex: 1;
-  }
 `;
 
 export default StyledLi;

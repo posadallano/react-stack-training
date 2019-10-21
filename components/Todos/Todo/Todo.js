@@ -1,13 +1,19 @@
 import React from 'react';
 import StyledLi from '@components/shared/StyledLi';
-import StyledRemoveButton from '@components/shared/StyledRemoveButton';
+import StyledTodosButton from '@components/shared/StyledTodosButton';
+import StyledTodoText from '@components/shared/StyledTodoText';
 
-const Todo = ({ text, deleteTodo }) => (
+const Todo = ({
+  text, deleteTodo, doneTodo, isDone,
+}) => (
   <StyledLi>
-    <span className="text">{text}</span>
-    <StyledRemoveButton onClick={deleteTodo}>
+    <StyledTodoText isDone={isDone} className="text">{text}</StyledTodoText>
+    <StyledTodosButton onClick={doneTodo}>
+      <span role="img" aria-label="Done">✅</span>
+    </StyledTodosButton>
+    <StyledTodosButton onClick={deleteTodo}>
       <span role="img" aria-label="Remove">❌</span>
-    </StyledRemoveButton>
+    </StyledTodosButton>
   </StyledLi>
 );
 

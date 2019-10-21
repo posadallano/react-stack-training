@@ -16,3 +16,8 @@ export const makeTodoTextSelector = todoId => createSelector(
   [makeTodoSelector(todoId)],
   todo => todo.text,
 );
+
+export const makeTodoDoneSelector = todoId => createSelector(
+  [makeTodoSelector(todoId)],
+  done => done.isDone,
+);

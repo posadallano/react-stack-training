@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const StyledRemoveButton = styled.button`
+const StyledTodosButton = styled.button`
   display: flex;
   flex-direction: column;
   flex-basis: 100%;
@@ -20,4 +20,4 @@ const StyledRemoveButton = styled.button`
   }
 `;
 
-export default StyledRemoveButton;
+export default StyledTodosButton;
