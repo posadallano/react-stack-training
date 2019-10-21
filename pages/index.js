@@ -2,10 +2,12 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { loadTodos } from '@store/actions/todos';
 import { loadSwitch } from '@store/actions/switch';
+import { loadTabs } from '@store/actions/tabs';
 import { getIsDarkEnabled } from '@store/selectors/themeSwitch';
 import PageWrapper from '@components/PageWrapper';
 import AddTodo from '@components/AddTodo';
 import Todos from '@components/Todos';
+import TodoTabs from '@components/TodoTabs';
 import WelcomeTitle from '@components/WelcomeTitle';
 import ThemeSwitch from '@components/ThemeSwitch';
 import { ThemeProvider } from 'styled-components';
@@ -19,6 +21,7 @@ class Index extends React.Component {
     if (isServer) {
       await store.dispatch(loadTodos.request.creator());
       await store.dispatch(loadSwitch.request.creator());
+      await store.dispatch(loadTabs.request.creator());
     }
 
     return { isServer };
@@ -32,6 +35,7 @@ class Index extends React.Component {
           <ThemeSwitch />
           <WelcomeTitle />
           <AddTodo />
+          <TodoTabs />
           <Todos />
         </PageWrapper>
       </ThemeProvider>

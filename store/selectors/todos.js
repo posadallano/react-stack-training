@@ -1,10 +1,21 @@
 import { createSelector } from 'reselect';
+import activeTabSelector from './currentTab';
 
 const todosSelector = state => state.todos;
 
 export const todosIdsSelector = createSelector(
-  [todosSelector],
-  todos => Object.keys(todos),
+  [todosSelector, activeTabSelector],
+  (todos, activeTab) => {
+    if (activeTab === 'all') {
+      return Object.keys(todos);
+    }
+    return Object.keys(todos).filter((id) => {
+      if (activeTab === 'done') {
+        return todos[id].isDone;
+      }
+      return !(todos[id].isDone);
+    });
+  },
 );
 
 export const makeTodoSelector = todoId => createSelector(
