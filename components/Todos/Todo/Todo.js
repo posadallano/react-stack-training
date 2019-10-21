@@ -1,12 +1,13 @@
 import React from 'react';
 import StyledLi from '@components/shared/StyledLi';
+import StyledRemoveButton from '@components/shared/StyledRemoveButton';
 
 const Todo = ({ text, deleteTodo }) => (
   <StyledLi>
     <span className="text">{text}</span>
-    <button type="button" onClick={deleteTodo}>
+    <StyledRemoveButton onClick={deleteTodo}>
       <span role="img" aria-label="Remove">❌</span>
-    </button>
+    </StyledRemoveButton>
   </StyledLi>
 );
 

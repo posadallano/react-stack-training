@@ -10,7 +10,6 @@ const makeMapStateToProps = (_, initialProps) => {
 
   return state => ({
     text: todoTextSelector(state),
-    id,
   });
 };
 
