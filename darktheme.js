@@ -1,4 +1,7 @@
+import theme from './theme';
+
 const darkTheme = {
+  ...theme.colors,
   colors: {
     black: '#fff',
     white: '#000',

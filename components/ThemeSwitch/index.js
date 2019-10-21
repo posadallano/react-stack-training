@@ -1,21 +1,16 @@
 import { connect } from 'react-redux';
-import { compose, withStateHandlers } from 'recompose';
 import { toggleSwitch } from '@store/actions/todos';
 import ThemeSwitch from './ThemeSwitch';
+import { getIsDarkEnabled } from '../../store/selectors/themeSwitch';
 
 const mapDispatchToProps = dispatch => ({
-  dispatchToggleSwitch: isDarkThemeEnabled => dispatch(toggleSwitch.creator(isDarkThemeEnabled)),
+  dispatchSwitch: () => dispatch(toggleSwitch),
 });
 
-const enhance = compose(
-  connect(null, mapDispatchToProps),
-  // initialState
-  withStateHandlers({ isDarkThemeEnabled: false }, {
-    // stateUpdaters
-    toggleSwitch: ({ isDarkThemeEnabled }, { dispatchToggleSwitch }) => () => {
-      dispatchToggleSwitch(isDarkThemeEnabled);
-    },
-  }),
-);
+function mapStateToProps(state) {
+  return { isDarkThemeEnabled: getIsDarkEnabled(state) };
+}
+
+const enhance = connect(mapStateToProps, mapDispatchToProps);
 
 export default enhance(ThemeSwitch);
