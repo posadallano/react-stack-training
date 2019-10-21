@@ -4,7 +4,9 @@ import { getIsDarkEnabled } from '@store/selectors/themeSwitch';
 import ThemeSwitch from './ThemeSwitch';
 
 const mapDispatchToProps = dispatch => ({
-  dispatchSwitch: isDarkThemeEnabled => dispatch(toggleSwitch.request.creator(isDarkThemeEnabled)),
+  dispatchSwitch: () => {
+    dispatch(toggleSwitch.request.creator());
+  },
 });
 
 function mapStateToProps(state) {
