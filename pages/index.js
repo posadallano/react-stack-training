@@ -6,6 +6,9 @@ import AddTodo from '@components/AddTodo';
 import Todos from '@components/Todos';
 import WelcomeTitle from '@components/WelcomeTitle';
 import ThemeSwitch from '@components/ThemeSwitch';
+import { ThemeProvider } from 'styled-components';
+import lightTheme from '@theme';
+import darkTheme from '../darktheme';
 
 class Index extends React.Component {
   static async getInitialProps(props) {
@@ -19,15 +22,22 @@ class Index extends React.Component {
   }
 
   render() {
+    const { isDarkThemeEnabled } = this.props;
     return (
-      <PageWrapper>
-        <ThemeSwitch />
-        <WelcomeTitle />
-        <AddTodo />
-        <Todos />
-      </PageWrapper>
+      <ThemeProvider theme={isDarkThemeEnabled ? darkTheme : lightTheme}>
+        <PageWrapper>
+          <ThemeSwitch />
+          <WelcomeTitle />
+          <AddTodo />
+          <Todos />
+        </PageWrapper>
+      </ThemeProvider>
     );
   }
 }
 
-export default connect()(Index);
+const mapStateToProps = state => ({
+  isDarkThemeEnabled: state.isDarkThemeEnabled,
+});
+
+export default connect(mapStateToProps)(Index);
