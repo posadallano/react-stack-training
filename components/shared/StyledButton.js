@@ -11,7 +11,8 @@ const StyledButton = styled.button`
   text-transform: lowercase;
   text-decoration: none;
   outline: 0;
-
+  background: ${({ theme }) => theme.colors.white};
+  
   &:hover {
     border: 3px solid ${({ theme }) => theme.colors.zemoga};
     color: ${({ theme }) => theme.colors.zemoga};

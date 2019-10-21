@@ -8,6 +8,7 @@ const Wrapper = styled.div({
   padding: '20px',
   fontFamily: ({ theme }) => theme.fontFamily,
   flexWrap: 'wrap',
+  background: ({ theme }) => theme.colors.white,
 });
 
 const Box = styled.div({
