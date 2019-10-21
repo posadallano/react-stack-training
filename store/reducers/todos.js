@@ -1,4 +1,4 @@
-import { postTodo, loadTodos } from '@store/actions/todos';
+import { postTodo, loadTodos, deleteTodo } from '@store/actions/todos';
 
 const addTodoReducer = (storeTodos, apiTodo) => (
   {
@@ -9,6 +9,11 @@ const addTodoReducer = (storeTodos, apiTodo) => (
   }
 );
 
+const deleteTodoReducer = (storeTodos, idTodo) => {
+  const { [idTodo]: idToDelete, ...remStoreTodos } = storeTodos;
+  return remStoreTodos;
+};
+
 const mapApiTodos = apiTodos => apiTodos.reduce(addTodoReducer, {});
 
 function todos(state = {}, action) {
@@ -18,6 +23,9 @@ function todos(state = {}, action) {
 
     case postTodo.response.type:
       return addTodoReducer(state, action.payload);
+
+    case deleteTodo.response.type:
+      return deleteTodoReducer(state, action.payload);
 
     default:
       return state;
