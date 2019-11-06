@@ -1,5 +1,4 @@
-# React Stack Training
-The idea behind this is to get familiar with an specific set of technologies by replicating and enhancing the world famous _Todo List_, one exercise at a time 🏗.
+# Todo list enhanced
 
 ## How to use
 **Note:** Make sure you're running `node >= 10` and its respective `npm` version.
@@ -18,9 +17,6 @@ The idea behind this is to get familiar with an specific set of technologies by 
 npm install
 npm run dev
 ```
-
-**4.** go to the [React Stack Training wiki](https://bitbucket.org/zemoga/react-stack-training/wiki/Home) for further instructions
-
 
 ### Project configuration based on
 
