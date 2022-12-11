@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "es6-promise": "4.1.1",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "isomorphic-unfetch": "2.0.0",
     "json-server": "^0.15.0",
     "next": "latest",
